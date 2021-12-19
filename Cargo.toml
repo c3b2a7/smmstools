@@ -1,0 +1,10 @@
+[package]
+name = "smms-uploader"
+authors = ["萌面喵喵侠<534619360@qq.com"]
+homepage = "https://lolico.me"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.11.7", features = ["blocking", "json", "multipart"] }
+serde = { version = "1.0.72", features = ["derive"] }
