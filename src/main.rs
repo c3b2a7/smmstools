@@ -1,9 +1,9 @@
-use std::{env, process};
 use std::error::Error;
 use std::ops::Not;
+use std::{env, process};
 
-use reqwest::{blocking, header};
 use reqwest::blocking::multipart::Form;
+use reqwest::{blocking, header};
 use serde::Deserialize;
 
 #[derive(Deserialize, Debug)]
@@ -60,7 +60,8 @@ impl<'a> Uploader<'a> {
         let mut _vec = Vec::new();
         let client = blocking::Client::new();
         for path in self.paths {
-            let v2_response = client.post("https://sm.ms/api/v2/upload")
+            let v2_response = client
+                .post("https://sm.ms/api/v2/upload")
                 .header(header::AUTHORIZATION, self.token)
                 .multipart(Form::new().file("smfile", path)?)
                 .send()?
@@ -75,18 +76,21 @@ impl<'a> Uploader<'a> {
     }
 }
 
-
 fn main() {
     Uploader::new(&env::args().collect()).map_or_else(
         |err| {
             eprintln!("Problem parsing arguments: {}", err);
             process::exit(1);
-        }, |uploader| {
-            match uploader.exec() {
-                Ok(urls) => for x in urls {
+        },
+        |uploader| match uploader.exec() {
+            Ok(urls) => {
+                for x in urls {
                     println!("{}", x);
-                },
-                Err(err) => println!("{}", err),
+                }
+            }
+            Err(err) => {
+                eprintln!("{}", err);
+                process::exit(1);
             }
         },
     )
