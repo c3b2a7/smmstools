@@ -5,7 +5,9 @@ A lightweight [SM.MS](https://sm.ms/) upload tool, no external dependencies, no 
 ### Install
 
 ```shell
-wget "https://github.com/c3b2a7/smms-uploader/releases/download/v0.1.0/smms-uploader-$(uname -m)" -O ./smms-uploader && chmod +x ./smms-uploader
+sudo mkdir -p /usr/local/bin && \
+sudo wget "https://github.com/c3b2a7/smms-uploader/releases/latest/download/smms-uploader-$(uname -s)-$(uname -m)" -O /usr/local/bin/smms-uploader && \
+sudo chmod +x /usr/local/bin/smms-uploader
 ```
 
 ### Usage
