@@ -1,6 +1,6 @@
 ## SM.MS Uploader
 
-A lightweight [SM.MS](https://sm.ms/) upload tool, no external dependencies, no interface, supports multiple image uploads and can work with typora.
+A lightweight [SM.MS](https://sm.ms/) upload tool with no external dependencies, no interface, support for multiple file uploads and works with typora.
 
 ### Install
 
