@@ -1,4 +1,4 @@
-name: smms-uploader CI
+name: smmstools CI
 
 on:
   push:
