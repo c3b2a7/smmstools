@@ -31,7 +31,7 @@ mv ./target/release/smmstools /usr/local/bin/smmstools
 ## Usage
 
 ```shell
-Uploader for sm.ms
+A lightweight SM.MS (https://sm.ms/) tools
 
 Usage: smmstools.exe --token <SMMS_TOKEN> <COMMAND>
 

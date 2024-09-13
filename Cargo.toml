@@ -2,7 +2,7 @@
 name = "smmstools"
 authors = ["萌面喵喵侠<534619360@qq.com"]
 homepage = "https://lolico.me"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
 [[bin]]
@@ -24,3 +24,9 @@ anyhow = "1.0"
 assert_matches = "1.5.0"
 # Enable test-utilities in dev mode only. This is mostly for tests.
 tokio = { version = "1.40", features = ["test-util"] }
+
+[profile.release]
+lto = true          # Enable link-time optimization
+codegen-units = 1   # Reduce number of codegen units to increase optimizations
+panic = 'abort'     # Abort on panic
+strip = true        # Strip symbols from binary*

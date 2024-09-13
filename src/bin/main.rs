@@ -5,7 +5,7 @@ use std::sync::Arc;
 use tokio::sync::mpsc;
 
 #[derive(Parser, Debug)]
-#[command(name = env!("CARGO_PKG_NAME"), version, author, about = "Uploader for sm.ms")]
+#[command(name = env!("CARGO_PKG_NAME"), version, author, about = "A lightweight SM.MS (https://sm.ms/) tools")]
 struct Cli {
     #[command(subcommand)]
     cmd: Command,
