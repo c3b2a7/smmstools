@@ -15,8 +15,7 @@ and can work with typora.
 ### From Source
 
 ```bash
-git clone https://github.com/c3b2a7/smmstools.git
-cargo install --path smmstools
+cargo install --git https://github.com/c3b2a7/smmstools.git
 ```
 
 ### Manual
